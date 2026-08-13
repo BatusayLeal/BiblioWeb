@@ -55,7 +55,7 @@ BiblioWeb/
 ### 1. Base de datos
 Si aún no la tienes creada:
 
-```bash de creacion, el archivo **sql/schema.sql** contiene la estructura de la bD con los ejemplos  
+```bash
 mysql -u root -p < sql/schema.sql
 ```
 
@@ -63,10 +63,8 @@ mysql -u root -p < sql/schema.sql
 Edita `src/main/java/com/biblioteca/dao/Conexion.java` y cambia:
 
 ```java
-    private static final String USER = "user_bliblio";
-    private static final String PASSWORD = "Biblio1234-";
+private static final String PASSWORD = "root";   // tu password
 ```
-por las credenciales de conexion a la base de datos mysql **biblioteca_untec**
 
 ### 3. Generar el WAR
 
@@ -97,17 +95,16 @@ Luego abre:
 | admin@untec.edu              | admin123  | ADMIN      |
 | maria.gonzalez@untec.edu     | maria123  | ESTUDIANTE |
 | carlos.perez@untec.edu       | carlos123 | ESTUDIANTE |
-| ana.silva@untec.edu          | ana123    | ESTUDIANTE |
 
 ---
 
 ## Funcionalidades
 
-- Login / Logout con sesión (Rol ADMIN o Estudiante)
-- Catálogo de libros (todos / disponibles / Orden asc-des Titulo-Autor-Año)
+- Login / Logout con sesión 
+- Catálogo de libros (todos / disponibles / Orden asc-desc Titulo Autor y Año)
 - Solicitar préstamo
 - Ver mis préstamos y devolver
-- **ADMIN**: agregar/ eliminar y Modificar libros y usuarios + ver todos los préstamos
+- **ADMIN**: agregar, eliminar, modificar libros y usuarios + ver todos los préstamos
 
 ---
 
@@ -117,4 +114,30 @@ Luego abre:
 - Compilado para **Java 25**.
 - Context path configurado como **BiblioWeb**.
 - 10 libros de ejemplo, **sin préstamos iniciales**.
-- 1 admin y 3 usuarios de ejemplos
+
+
+---
+
+## Sistema de log
+
+Cada operación de base de datos (SELECT, INSERT, UPDATE, DELETE) y los errores
+se registran automáticamente en:
+
+```
+{catalina.base}/log/biblioweb.log
+```
+
+Si no corre bajo Tomcat, el archivo se crea en:
+
+```
+{user.dir}/log/biblioweb.log
+```
+
+Formato de cada línea:
+
+```
+2026-08-13 08:40:15 | LibroDAO.java | insertar | INFO | INSERT libro OK - id=11 | titulo=Clean Code
+2026-08-13 08:41:02 | UsuarioDAO.java | login | ERROR | ERROR en SELECT login - email=x@y.com
+```
+
+El archivo **nunca se borra**: cada evento se agrega al final (modo append).

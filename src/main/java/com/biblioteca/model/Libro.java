@@ -2,17 +2,24 @@ package com.biblioteca.model;
 
 import java.io.Serializable;
 
+/**
+ * Modelo (POJO) que representa un libro de la biblioteca.
+ *
+ * Cada instancia de esta clase corresponde a una fila de la tabla "libro".
+ * Los Servlets y las JSP trabajan con objetos Libro, nunca con SQL directo.
+ */
 public class Libro implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private int id;
-    private String titulo;
-    private String autor;
-    private String isbn;
-    private int anio;
-    private String editorial;
-    private boolean disponible;
+    private int id;              // Clave primaria
+    private String titulo;       // Título del libro
+    private String autor;        // Autor
+    private String isbn;         // Código ISBN (único)
+    private int anio;            // Año de publicación
+    private String editorial;    // Editorial
+    private boolean disponible;  // true = se puede prestar
 
+    /** Constructor vacío. */
     public Libro() {}
 
     public int getId() { return id; }
