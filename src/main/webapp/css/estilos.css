@@ -1,0 +1,75 @@
+:root {
+    --primary: #1a365d;
+    --primary-light: #2c5282;
+    --accent: #3182ce;
+    --bg: #f7fafc;
+    --text: #2d3748;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.navbar-brand { font-weight: 700; }
+.navbar { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.login-header {
+    background: var(--primary);
+    color: white;
+    padding: 1.75rem;
+    text-align: center;
+}
+
+.login-header h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.login-header p { opacity: 0.85; margin: 0; font-size: 0.9rem; }
+
+.badge-disponible { background-color: #c6f6d5; color: #22543d; }
+.badge-prestado { background-color: #fed7d7; color: #742a2a; }
+
+.table thead th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-primary { background-color: var(--accent); border-color: var(--accent); }
+.btn-primary:hover { background-color: var(--primary-light); border-color: var(--primary-light); }
+
+.footer {
+    background-color: var(--primary);
+    color: rgba(255,255,255,0.85);
+    padding: 1rem 0;
+    margin-top: auto;
+    font-size: 0.875rem;
+}
+
+.form-agregar {
+    background: #edf2f7;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
