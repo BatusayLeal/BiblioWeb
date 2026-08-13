@@ -55,7 +55,7 @@ BiblioWeb/
 ### 1. Base de datos
 Si aún no la tienes creada:
 
-```bash
+```bash de creacion, el archivo **sql/schema.sql** contiene la estructura de la bD con los ejemplos  
 mysql -u root -p < sql/schema.sql
 ```
 
@@ -63,8 +63,10 @@ mysql -u root -p < sql/schema.sql
 Edita `src/main/java/com/biblioteca/dao/Conexion.java` y cambia:
 
 ```java
-private static final String PASSWORD = "root";   // tu password
+    private static final String USER = "user_bliblio";
+    private static final String PASSWORD = "Biblio1234-";
 ```
+por las credenciales de conexion a la base de datos mysql **biblioteca_untec**
 
 ### 3. Generar el WAR
 
@@ -95,16 +97,17 @@ Luego abre:
 | admin@untec.edu              | admin123  | ADMIN      |
 | maria.gonzalez@untec.edu     | maria123  | ESTUDIANTE |
 | carlos.perez@untec.edu       | carlos123 | ESTUDIANTE |
+| ana.silva@untec.edu          | ana123    | ESTUDIANTE |
 
 ---
 
 ## Funcionalidades
 
-- Login / Logout con sesión
-- Catálogo de libros (todos / disponibles)
+- Login / Logout con sesión (Rol ADMIN o Estudiante)
+- Catálogo de libros (todos / disponibles / Orden asc-des Titulo-Autor-Año)
 - Solicitar préstamo
 - Ver mis préstamos y devolver
-- **ADMIN**: agregar y eliminar libros + ver todos los préstamos
+- **ADMIN**: agregar/ eliminar y Modificar libros y usuarios + ver todos los préstamos
 
 ---
 
@@ -114,3 +117,4 @@ Luego abre:
 - Compilado para **Java 25**.
 - Context path configurado como **BiblioWeb**.
 - 10 libros de ejemplo, **sin préstamos iniciales**.
+- 1 admin y 3 usuarios de ejemplos

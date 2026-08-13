@@ -44,6 +44,11 @@
                             <i class="bi bi-list-check me-1"></i>Todos los Préstamos
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/usuarios">
+                            <i class="bi bi-people me-1"></i>Usuarios
+                        </a>
+                    </li>
                 </c:if>
             </ul>
             <ul class="navbar-nav">
