@@ -42,9 +42,9 @@ public class Conexion {
             // Abre la conexión con usuario y contraseña
             this.conexion = DriverManager.getConnection(URL, USER, PASSWORD);
             LoggerUtil.info("Conexion.java", "Conexion()", "Conexión a MySQL establecida correctamente");
-        } catch (ClassNotFoundException e) {
+                } catch (ClassNotFoundException e) {
             LoggerUtil.error("Conexion.java", "Conexion()", "Driver MySQL no encontrado", e);
-        } catch (SQLException e) {
+                } catch (SQLException e) {
             LoggerUtil.error("Conexion.java", "Conexion()", "Error al conectar con MySQL", e);
         }
     }

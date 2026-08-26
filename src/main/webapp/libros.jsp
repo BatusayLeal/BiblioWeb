@@ -206,10 +206,12 @@
                         <label class="form-label">Año</label>
                         <input type="number" class="form-control" name="anio" id="edit-anio" min="1900" max="2030">
                     </div>
+                    <!--
                     <div class="mb-3">
                         <label class="form-label">Editorial</label>
                         <input type="text" class="form-control" name="editorial" id="edit-editorial">
                     </div>
+                    -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
