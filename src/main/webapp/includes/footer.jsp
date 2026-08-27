@@ -2,7 +2,7 @@
 
 <footer class="footer mt-auto">
     <div class="container text-center">
-        <span>BiblioWeb UNTEC &copy; 2026 | Módulo 5 - Jakarta EE</span>
+        <span>BiblioWeb 2026 | Trabajo Módulo 5 - Jakarta EE</span>
         <br>
         <small>Java 25 · Tomcat 11 · Servlet 6.0 · JSP · DAO · MVC · JSTL</small>
     </div>
